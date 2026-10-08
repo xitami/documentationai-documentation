@@ -1,0 +1,119 @@
+---
+title: Quickstart
+description: Sign up for an account and complete your first trip booking in minutes.
+---
+
+## Prerequisites
+
+<Callout kind="info">
+Before starting, ensure you have:
+- A valid email address for account verification
+- Payment method ready (credit card or bank transfer)
+- Internet connection for browsing trips
+</Callout>
+
+## Create an Account
+
+Follow these steps to sign up and log in to your TWG account.
+
+<Steps>
+  <Step title="Visit the Dashboard" icon="monitor">
+    Navigate to `https://dashboard.example.com` and click **Sign Up**.
+  </Step>
+  <Step title="Enter Your Details" icon="user">
+    Provide your email, create a strong password, and accept the terms.
+  </Step>
+  <Step title="Verify Email" icon="mail">
+    Check your inbox for the verification link and click it to activate.
+  </Step>
+  <Step title="Log In" icon="log-in">
+    Return to the dashboard, enter your credentials, and access your profile.
+  </Step>
+</Steps>
+
+## Browse and Search Trips
+
+Discover trips like bus tours, music journeys, or winter getaways using the search tools.
+
+<Tabs>
+  <Tab title="Web" icon="monitor">
+    Use the search bar at the top: enter keywords like "Weihnachtsmärkte" or filter by "Busreisen".
+    
+    Select dates and destinations from the dropdowns.
+  </Tab>
+  <Tab title="Mobile App" icon="smartphone">
+    Open the app, tap the magnifying glass icon, and apply filters for "Veloreisen" or "Flussreisen".
+    
+    Save favorites for quick access later.
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">
+Pro tip: Use advanced filters for group sizes, prices, or themes to find the best match quickly.
+</Callout>
+
+## Book Your First Trip
+
+Once you find a trip, proceed to booking.
+
+<Steps>
+  <Step title="Select Trip" icon="map-pin">
+    Click on a trip like "Tagesausflüge" to view details, itinerary, and pricing.
+  </Step>
+  <Step title="Add to Cart" icon="shopping-cart">
+    Choose dates, number of travelers, and any add-ons like car rental.
+  </Step>
+  <Step title="Checkout" icon="credit-card">
+    Review your selection, enter passenger details, and proceed to payment.
+  </Step>
+  <Step title="Confirm Payment" icon="check-circle">
+    Complete payment and receive confirmation email with voucher and details.
+  </Step>
+</Steps>
+
+For developers integrating bookings, here's a simple API example:
+
+<CodeGroup tabs="JavaScript,cURL">
+  ```javascript
+  const response = await fetch('https://api.example.com/v1/trips/search', {
+    method: 'POST',
+    headers: { 'Authorization': 'Bearer YOUR_TOKEN', 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      query: 'Busreisen',
+      dates: { start: '2024-12-01', end: '2024-12-10' }
+    })
+  });
+  const trips = await response.json();
+  console.log(trips);
+  ```
+  ```bash
+  curl -X POST https://api.example.com/v1/trips/search \
+    -H "Authorization: Bearer YOUR_TOKEN" \
+    -H "Content-Type: application/json" \
+    -d '{
+      "query": "Busreisen",
+      "dates": { "start": "2024-12-01", "end": "2024-12-10" }
+    }'
+  ```
+</CodeGroup>
+
+## Next Steps
+
+<Columns cols={2}>
+  <Card title="Manage Bookings" icon="calendar" href="/guides/booking-management">
+    View, modify, or cancel your trips anytime.
+  </Card>
+  <Card title="Explore Features" icon="compass" href="/concepts/advanced-search">
+    Learn about group trips, custom itineraries, and more.
+  </Card>
+  <Card title="Payment Options" icon="credit-card" href="/configuration/payments">
+    Configure preferred methods and save details securely.
+  </Card>
+  <Card title="Support" icon="help-circle" href="/faq">
+    Get help with common questions and contact support.
+  </Card>
+</Columns>
+
+<Expandable title="Troubleshooting Common Issues" default-open="false">
+If login fails, ensure your email is verified. For payment errors, check card details or contact your bank. Booking confirmations arrive within 5 minutes.
+</Expandable>

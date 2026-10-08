@@ -1,0 +1,141 @@
+---
+title: Changelog
+description: Version history with 2-3 recent updates to the TWG platform.
+---
+
+## Overview
+
+Track the latest improvements to the TWG platform, your go-to solution for seamless travel bookings and itinerary management. You receive new features, bug fixes, and performance enhancements with each release. Review the highlights below to see what's new.
+
+<Callout kind="info">
+  Bookmark this page for the most recent updates. You can subscribe to release notifications via the dashboard settings.
+</Callout>
+
+## Recent Releases
+
+<Update label="2024-11-15" description="v2.1.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added support for real-time itinerary sharing via secure links, perfect for group travel planning.
+- Introduced advanced filters for busreisen and flug-bus options, including E-Mountainbike compatibility.
+- New Excellence Club dashboard with personalized recommendations based on past bookings.
+
+## Improvements
+
+- Optimized search performance for Weihnachtsmärkte and Festtagsreisen, reducing load times by 40%.
+- Enhanced mobile responsiveness for Tagesausflüge booking flows.
+
+## Bug Fixes
+
+- Fixed occasional crashes during multi-leg Flussreisen bookings.
+- Resolved pricing display issues for Gruppenreisen nach Mass.
+
+</Update>
+
+<Update label="2024-10-20" description="v2.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Launched comprehensive Themenreisen module with customizable templates.
+- Integrated Nachhaltig reisen metrics, showing CO2 savings for each trip option.
+- Added Kundenbewertungen integration directly in search results.
+
+## Breaking Changes
+
+- Updated API endpoints from `/v1/bookings` to `/v2/bookings` for better scalability. Migrate your integrations following the [upgrade guide](/quickstart#upgrading).
+
+## Bug Fixes
+
+- Corrected date picker issues in Veloreisen scheduling.
+- Fixed lost-found report submission errors.
+
+</Update>
+
+<Update label="2024-09-10" description="v1.9.0" tags={["bugfix", "improvement"]}>
+
+## Improvements
+
+- Streamlined An- und Rückreise selection with auto-suggest for popular routes.
+- Upgraded Reisebusse fleet visualization with interactive maps.
+
+## Bug Fixes
+
+- Patched security vulnerability in Car mieten reservation system.
+- Resolved duplicate bookings in Musikreisen confirmations.
+
+</Update>
+
+## Upcoming Roadmap
+
+View planned features in our development board. You prioritize these based on community feedback.
+
+<Board title="Q4 2024 Roadmap">
+  <BoardColumn title="Planned" color="0" icon="calendar">
+    <BoardCard title="Live chat support" description="Real-time assistance for bookings" icon="message-circle" dueDate="2024-12-15" />
+    <BoardCard title="AI trip planner" description="Smart suggestions for mixed travel types" icon="brain" dueDate="2024-12-31" />
+  </BoardColumn>
+  <BoardColumn title="In Progress" color="1" icon="loader-2">
+    <BoardCard title="Webhook notifications" description="Instant updates on booking changes" icon="zap" author="Dev Team" />
+  </BoardColumn>
+  <BoardColumn title="Completed" color="2" icon="check-circle">
+    <BoardCard title="Preise & Rabatte calculator" description="Dynamic discount previews" createdAt="2024-11-01" />
+  </BoardColumn>
+</Board>
+
+## How to Upgrade
+
+Follow these steps to update your TWG instance or SDK to the latest version.
+
+<Steps>
+  <Step title="Check Current Version" icon="package">
+    Run the version check command:
+    
+````bash
+twg --version
+````
+  </Step>
+  <Step title="Backup Data" icon="database">
+    Export your configurations and bookings:
+    
+````bash
+twg export --all > backup.json
+````
+  </Step>
+  <Step title="Install Update" icon="download">
+    <Tabs>
+      <Tab title="npm" icon="package">
+````bash
+npm install twg@latest
+````
+      </Tab>
+      <Tab title="yarn" icon="package">
+````bash
+yarn add twg@latest
+````
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="Verify" icon="check-circle">
+    Test core functions:
+    
+````javascript
+import { TWG } from 'twg';
+const client = new TWG({ apiKey: 'YOUR_API_KEY' });
+console.log(await client.bookings.list());
+````
+  </Step>
+</Steps>
+
+<Columns cols={2}>
+  <Card title="Upgrade Guide" icon="book-open" href="/quickstart">
+    Detailed migration instructions for v2.0+.
+  </Card>
+  <Card title="Report Issues" icon="bug" href="https://github.com/twerenbold/twg/issues" target="_blank">
+    Found a bug? Submit it here.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  You access full release notes in the TWG dashboard under "Releases". Customize notifications to fit your workflow.
+</Callout>

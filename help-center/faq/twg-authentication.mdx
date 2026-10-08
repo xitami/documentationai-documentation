@@ -1,0 +1,26 @@
+---
+title: Wie authentifiziere ich mich bei floxite.studio?
+description: TWG Login und API Key erklärt.
+---
+
+## Überblick
+
+Für die Anmeldung bei TWG auf floxite.studio wird ein Nutzerkonto benötigt.
+
+## Login Schritt-für-Schritt
+
+1. Besuche `https://floxite.studio/login`
+2. Gib deine TWG-Zugangsdaten ein
+3. Klicke auf "Anmelden"
+
+## API Schlüssel erhalten
+
+1. Gehe zu `Einstellungen` → `API`
+2. Auf "API Key generieren" klicken
+3. Schlüssel sicher speichern
+
+## Beispiel (API Anfrage)
+
+```bash
+curl -H "Authorization: Bearer DEIN_API_KEY" https://floxite.studio/api/v1/tours
+```
